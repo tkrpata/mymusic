@@ -42,12 +42,14 @@ function addCard(event) {
 
                 // Clear the form inputs
                 $('#addCard fieldset input').val('');
+                $('#statusmessage div').val("Success!");
 
             }
             else {
 
                 // If something goes wrong, alert the error message that our service returned
                 alert('Error: ' + response.msg);
+                $('#statusmessage div').val("Error: " + response.msg);
 
             }
         });

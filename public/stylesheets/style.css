@@ -30,3 +30,7 @@ fieldset {
 	border:0;
 	padding:10; margin:10;
 }
+
+#statusmessage {
+  visibility: hidden;
+}

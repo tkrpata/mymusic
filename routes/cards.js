@@ -9,7 +9,6 @@ router.get('/cardlist', function(req, res) {
     });
 });
 
-
 /* get single */ 
 router.get('/getcard/:id', function(req, res) {
   var db = req.db;
