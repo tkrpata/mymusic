@@ -37,26 +37,33 @@ function addCard(event) {
             dataType: 'JSON'
         }).done(function( response ) {
 
+
             // Check for successful (blank) response
             if (response.msg === '') {
 
                 // Clear the form inputs
                 $('#addCard fieldset input').val('');
-                $('#statusmessage div').val("Success!");
+                $('#statusmessage').css("color","green");
+                $('#statusmessage').text("Success!");
 
             }
             else {
 
                 // If something goes wrong, alert the error message that our service returned
                 alert('Error: ' + response.msg);
-                $('#statusmessage div').val("Error: " + response.msg);
+                $('#statusmessage').css("color","red");
+                $('#statusmessage').text("Error: " + response.msg);
 
             }
+
+            $('#statusmessage').show()
         });
     }
     else {
         // If errorCount is more than 0, error out
-        alert('Please fill in all fields');
+        //alert('Please fill in all fields');
+        $('#statusmessage').css("color","red");
+        $('#statusmessage').text("Please fill in all fields");
         return false;
     }
 };
