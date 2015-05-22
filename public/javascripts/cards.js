@@ -5,6 +5,7 @@ $(document).ready(function() {
 
     // Add User button click
     $('#btnAddCard').on('click', addCard);
+    return false;
 
 });
 
