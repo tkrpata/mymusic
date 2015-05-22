@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1 MyMusic
+
+  #wrapper
+
+    h2 Add Card
+    #addCard
+      fieldSet
+        input#inputCardId(type='text', placeholder='AABBCCDD')
+        br
+        input#inputTrack(type='text', placeholder='https://open.spotify.com/track/61X11F7Hx7TubRYAu9KOdk')
+        br
+        button#btnAddCard Add Card

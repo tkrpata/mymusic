@@ -1,0 +1,32 @@
+body {
+  padding: 30px;
+  font: 32px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+h2 {
+	margin:0 0 .5em 0;
+}
+
+a {
+  color: #00B7FF;
+}
+
+input {
+  font: 24px "Lucida Grande", Helvetica, Arial, sans-serif;
+  width: 80%;
+  padding: 10px; margin: 10px;
+}
+
+button {
+  font: 32px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 10px; margin: 10px;
+}
+
+#wrapper {
+	position:relative;
+}
+
+fieldset {
+	border:0;
+	padding:10; margin:10;
+}
