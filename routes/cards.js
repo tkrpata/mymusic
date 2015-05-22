@@ -23,7 +23,8 @@ router.get('/getcard/:id', function(req, res) {
 router.put('/updatecard', function(req, res) {
   var db = req.db;
   req.body.id = req.body.id.toUpperCase();  
-  db.collection('cardinfo').save({id: req.body.id}, req.body, function(err, result){
+  console.log(req.body);
+  db.collection('cardinfo').update({id: req.body.id}, req.body, {upsert:true}, function(err, result){
     res.send(
       (err === null) ? { msg: ''} : { msg: err }
     );
