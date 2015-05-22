@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 // Database
 var mongo = require('mongoskin');
-var db = mongo.db("mongodb://localhost:27017/mymusic", {native_parser:true});
+var db = mongo.db(process.env.MONGOHQ_URL, {native_parser:true});
 
 
 var routes = require('./routes/index');
