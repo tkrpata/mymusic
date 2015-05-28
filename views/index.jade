@@ -14,10 +14,17 @@ block content
           label(for='inputTrack',class='control-label') Track URI
           input#inputTrack(type='text', placeholder='https://open.spotify.com/track/61X11F7Hx7TubRYAu9KOdk')
           #searchresult
-          br
         button#btnAddCard Update
         #statusmessage
         br
         label(for='inputSearch',class='control-label') Search
         input#inputSearch(type='text', placeholder='...')
-      
+        br
+        iframe#preview( src="https://embed.spotify.com/?uri=https%3A%2F%2Fopen.spotify.com%2Ftrack%2F61X11F7Hx7TubRYAu9KOdk",
+                          width="300",
+                          height="80",
+                          frameborder="0",
+                          allowtransparency="true",
+                        )
+        br
+        label(for='preview',class='player-label') Opens in Spotify app

@@ -31,6 +31,7 @@ $(document).ready(function() {
               $('#inputTrack').val(uri);
               $('#searchresult').text(artist + " - " + track);
               $('#searchresult').show();
+              $('#preview').attr('src', "https://embed.spotify.com/?uri=" + encodeURI($('#inputTrack').val()));
             });
           } 
         }); 

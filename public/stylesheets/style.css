@@ -39,6 +39,14 @@ fieldset {
 
 #searchresult {
   visibility: none;
-  font-size: 24px;
+  font-size: 16px;
   font-style: italic;   
+}
+
+.control-label {
+
+}
+
+.player-label {
+  font-size: 12px;
 }
