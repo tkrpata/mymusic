@@ -12,6 +12,7 @@ var db = mongo.db(process.env.MONGOHQ_URL, {native_parser:true});
 var routes = require('./routes/index');
 //var users = require('./routes/users');
 var cards = require('./routes/cards');
+var help = require('./routes/help');
 
 var app = express();
 
@@ -36,6 +37,7 @@ app.use(function(req,res,next){
 app.use('/', routes);
 //app.use('/users', users);
 app.use('/cards', cards);
+app.use('/help',help);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
