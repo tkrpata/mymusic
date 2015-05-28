@@ -5,6 +5,36 @@ $(document).ready(function() {
 
     // Add User button click
     $('#btnAddCard').on('click', addCard);
+
+    $("#inputSearch").autocomplete({ 
+      source: function (request, response) { 
+        $.ajax({ 
+          type: "GET", 
+          contentType: "application/json; charset=utf-8", 
+          //url: 'https://api.spotify.com/v1/search?q=roadhouse+blues&type=track&limit=5',
+          url: "https://api.spotify.com/v1/search",
+          data: "type=track&limit=1&q=" + $('#inputSearch').val(),
+          dataType: "json", 
+          success: function (data) { 
+            console.log(JSON.stringify(data.tracks.items[0].name));
+          } 
+        }); 
+      }, 
+      minLength: 2, 
+      select: function (event, ui) { 
+                    
+      }, 
+      open: function () { 
+        $(this).removeClass("ui-corner-all").addClass("ui-corner-top"); 
+      }, 
+      close: function () { 
+        $(this).removeClass("ui-corner-top").addClass("ui-corner-all"); 
+      }, 
+      error: function (XMLHttpRequest, textStatus, errorThrown) { 
+        alert(textStatus); 
+      } 
+    }); 
+
     return false;
 
 });
@@ -67,5 +97,10 @@ function addCard(event) {
         return false;
     }
 };
+
+
+function search(event) {
+  alert($('#inputSearch').text());
+}
 
 
