@@ -13,12 +13,15 @@ block content
           br
           label(for='inputTrack',class='control-label') Track URI
           input#inputTrack(type='text', placeholder='https://open.spotify.com/track/61X11F7Hx7TubRYAu9KOdk')
+          br
+          label(for='inputSearch',class='control-label') &nbsp;
+          input#inputSearch(type='text', placeholder='Search...')
           #searchresult
-        button#btnAddCard Update
-        #statusmessage
-        br
-        label(for='inputSearch',class='control-label') Search
-        input#inputSearch(type='text', placeholder='...')
+        label(for='btnAddCard',class='control-label') &nbsp;
+        span
+          button#btnAddCard Update
+          label(for='statusMessage',class='control-label') &nbsp;
+          #statusmessage
         br
         iframe#preview( src="https://embed.spotify.com/?uri=https%3A%2F%2Fopen.spotify.com%2Ftrack%2F61X11F7Hx7TubRYAu9KOdk",
                           width="300",
@@ -26,5 +29,5 @@ block content
                           frameborder="0",
                           allowtransparency="true",
                         )
-        br
-        label(for='preview',class='player-label') Opens in Spotify app
+          br
+          label(for='preview',class='player-label') Opens in Spotify app
