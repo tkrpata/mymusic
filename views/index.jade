@@ -6,10 +6,16 @@ block content
     h2 Add or Update Card
     #addCard
       fieldSet
-        input#inputCardId(type='text', placeholder='AABBCCDD')
-        br
-        input#inputTrack(type='text', placeholder='https://open.spotify.com/track/61X11F7Hx7TubRYAu9KOdk')
-        br
+        #inputs
+          label(for='inputCardId',class='control-label') Card ID [<a href="#">?</a>]
+          input#inputCardId(type='text', placeholder='AABBCCDD')
+          br
+          label(for='inputTrack',class='control-label') Track URI
+          input#inputTrack(type='text', placeholder='https://open.spotify.com/track/61X11F7Hx7TubRYAu9KOdk')
+          br
         button#btnAddCard Update
+        br
+        label(for='inputSearch',class='control-label') Search
+        input#inputSearch(type='text', placeholder='...')
         #statusmessage
       
