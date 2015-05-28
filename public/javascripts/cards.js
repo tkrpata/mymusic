@@ -11,12 +11,27 @@ $(document).ready(function() {
         $.ajax({ 
           type: "GET", 
           contentType: "application/json; charset=utf-8", 
-          //url: 'https://api.spotify.com/v1/search?q=roadhouse+blues&type=track&limit=5',
           url: "https://api.spotify.com/v1/search",
           data: "type=track&limit=1&q=" + $('#inputSearch').val(),
           dataType: "json", 
           success: function (data) { 
-            console.log(JSON.stringify(data.tracks.items[0].name));
+            $.each (data.tracks.items, function (index,i) {
+              var artist = "";
+              var track = "";
+              var uri = "";
+
+              track = i.name;
+              uri = i.external_urls.spotify;
+              var artists = [];
+              $.each (i.artists, function (index,a) {
+                artists.push(a.name);
+              });
+              artist = artists.join("/");
+              console.log(artist,track,uri);
+              $('#inputTrack').val(uri);
+              $('#searchresult').text(artist + " - " + track);
+              $('#searchresult').show();
+            });
           } 
         }); 
       }, 

@@ -36,3 +36,9 @@ fieldset {
   visibility: none;
   font-size: 24px;
 }
+
+#searchresult {
+  visibility: none;
+  font-size: 24px;
+  font-style: italic;   
+}
